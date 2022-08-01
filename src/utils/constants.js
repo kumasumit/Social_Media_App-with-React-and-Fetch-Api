@@ -1,4 +1,4 @@
-const API_ROOT = "http://codeial.codingninjas.com:8000/api/v2/";
+const API_ROOT = "https://codeial.codingninjas.com:8000/api/v2/";
 
 // doc url - https://www.notion.so/aakashcn/Codeial-API-docs-3a4d0b5a42c54f0a94d951a42aabc13f
 export const API_URLS = {
