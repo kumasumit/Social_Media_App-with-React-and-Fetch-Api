@@ -49,7 +49,7 @@ const SignUp = () => {
         autoClose: 5000,
         closeOnClick: true,
       });
-      navigate("/login");
+      // navigate("/login");
     } else {
       toast.error(response.message, {
         position: "top-left",
