@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../hooks";
+
 import styles from "../styles/login.module.css";
 
 const SignUp = () => {
@@ -13,8 +14,12 @@ const SignUp = () => {
   const [signingUp, setSigningUp] = useState("");
 
   const auth = useAuth();
-  const navigate = useNavigate();
-
+  const clearForm = () => {
+    setName("");
+    setPassword("");
+    setConfirmPassword("");
+    setEmail("");
+  };
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setSigningUp(true);
@@ -49,7 +54,7 @@ const SignUp = () => {
         autoClose: 5000,
         closeOnClick: true,
       });
-      // navigate("/login");
+      clearForm();
     } else {
       toast.error(response.message, {
         position: "top-left",
@@ -58,7 +63,9 @@ const SignUp = () => {
     }
     setSigningUp(false);
   };
-
+  if (auth.user) {
+    return <Navigate to="/" />;
+  }
   return (
     <>
       <form className={styles.loginForm} onSubmit={handleFormSubmit}>

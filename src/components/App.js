@@ -1,15 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import { useAuth } from "../hooks";
-import { Home, Login, Settings, SignUp } from "../pages";
+import { Home, Login, Settings, SignUp, UserProfile } from "../pages";
+import PrivateRoute from "../routes/PrivateRoute";
 import { Loader, Navbar } from "./";
 
 const Page404 = () => {
   return <h1>Page not found</h1>;
 };
+
 // const Login = () => {
 //   return <h1>Login</h1>;
 // };
+
 function App() {
   const auth = useAuth();
 
@@ -26,7 +28,23 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<SignUp />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route
+            path="/settings"
+            element={
+              <PrivateRoute redirectTo="/login">
+                <Settings />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/user/:userId"
+            element={
+              <PrivateRoute redirectTo="/login">
+                <UserProfile />
+              </PrivateRoute>
+            }
+          />
+
           <Route path="*" element={<Page404 />} />
         </Routes>
       </Router>
