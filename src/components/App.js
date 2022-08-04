@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useAuth } from "../hooks";
+import { useAuth } from "../hooks/auth";
 import { Home, Login, Settings, SignUp, UserProfile } from "../pages";
 import PrivateRoute from "../routes/PrivateRoute";
 import { Loader, Navbar } from "./";

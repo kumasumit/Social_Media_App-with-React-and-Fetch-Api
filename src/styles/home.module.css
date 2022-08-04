@@ -140,3 +140,104 @@
 .postCommentsList .commentLike img:hover {
   cursor: pointer;
 }
+
+/* Styles added */
+.home {
+  padding: 20px 50px;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+.home .posts-list {
+  flex-grow: 0.8;
+}
+.friendsList {
+  background: #fff;
+  margin-left: 50px;
+  flex-grow: 0.2;
+  height: 50vh;
+  box-sizing: border-box;
+  margin-top: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow-y: scroll;
+}
+.friendsList .header {
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 600;
+  font-size: 16px;
+  color: #424242;
+  padding: 20px;
+}
+.friendsList .friendsImg img {
+  height: 40px;
+}
+.noFriends {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.friendsItem {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  color: #616161;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  text-decoration: none;
+}
+.friendsItem:hover {
+  cursor: pointer;
+  background-color: #f1f1f1;
+}
+.friendsName {
+  padding: 0 10px;
+}
+.postsList {
+  flex: 1;
+}
+
+/* Create Post */
+.createPost {
+  background: white;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.createPost > div {
+  padding: 10px;
+  border-top: 1px solid #d0d0d0;
+  display: flex;
+  justify-content: flex-end;
+}
+.createPost textarea {
+  height: 90px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 15px;
+  border: none;
+  resize: none;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.addPostBtn {
+  width: 112px;
+  height: 42px;
+  left: 111.5px;
+  top: 0px;
+  background: #ef7917;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+}
+.addPostBtn:focus,
+.createPost textarea:focus {
+  outline: none;
+}
+.addPostBtn:hover {
+  cursor: pointer;
+}

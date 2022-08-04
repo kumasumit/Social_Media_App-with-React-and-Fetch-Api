@@ -1,16 +1,11 @@
 import styles from "../styles/settings.module.css";
-import { useAuth } from "../hooks";
+import { useAuth } from "../hooks/auth";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Loader } from "../components";
-import {
-  addFriend,
-  fetchUserProfile,
-  removeFriend,
-  fetchUserFriends,
-} from "../api";
+import { addFriend, fetchUserProfile, removeFriend } from "../api";
 
 const UserProfile = () => {
   const [user, setUser] = useState({});
