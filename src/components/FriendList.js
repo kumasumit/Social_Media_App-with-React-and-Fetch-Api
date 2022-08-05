@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/auth";
 import styles from "../styles/home.module.css";
@@ -9,10 +9,9 @@ const FriendList = () => {
   useEffect(() => {
     const getFriends = async () => {
       await auth.fetchFriends();
-      console.log(auth.user);
     };
     getFriends();
-  }, []);
+  }, [auth]);
 
   return (
     <div className={styles.friendsList}>
