@@ -20,9 +20,6 @@ const Navbar = () => {
       setResults([]);
     }
   }, [searchText]);
-  const handleSearchUserClick = () =>{
-    
-  }
   return (
     <div className={styles.nav}>
       <div className={styles.leftDiv}>
@@ -52,14 +49,12 @@ const Navbar = () => {
                   className={styles.searchResultsRow}
                   key={`user-${user._id}`}
                 >
-                  <Link to={`/user/${user._id}`}>
+                  <Link to={`/user/${user._id}`} onClick={() => setResults([])}>
                     <img
                       src="https://image.flaticon.com/icons/svg/2154/2154651.svg"
                       alt=""
                     />
-                    <button onClick={handleSearchUserClick}>
-                      <span>{user.name}</span>
-                    </button>
+                    <span>{user.name}</span>
                   </Link>
                 </li>
               ))}

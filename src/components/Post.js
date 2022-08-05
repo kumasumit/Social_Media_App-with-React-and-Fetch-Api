@@ -9,11 +9,9 @@ import { createComment } from "../api";
 
 const Post = ({ post }) => {
   const [comment, setComment] = useState("");
-  const [creatingComment, setCreatingComment] = useState(false);
   const posts = usePosts();
   const handleAddComment = async (e) => {
     if (e.key === "Enter") {
-      setCreatingComment(true);
       const response = await createComment(comment, post._id);
       if (response.success) {
         setComment("");
@@ -30,7 +28,6 @@ const Post = ({ post }) => {
           closeOnClick: true,
         });
       }
-      setCreatingComment(false);
     }
   };
   return (

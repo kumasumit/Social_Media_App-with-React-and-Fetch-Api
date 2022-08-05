@@ -25,7 +25,11 @@ function App() {
         <Navbar />
         <Routes>
           {/* here routes is same as switch of react router v5 */}
-          <Route path="/" element={<Home />} />
+          <Route path="/"  element={
+              <PrivateRoute redirectTo="/register">
+                <Home />
+              </PrivateRoute>
+            } />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<SignUp />} />
           <Route

@@ -16,21 +16,10 @@ const UserProfile = () => {
   const navigate = useNavigate();
   const auth = useAuth();
   // console.log(userId);
-  console.log(auth);
-
-  useEffect(() => {
-    const getFriends = async () => {
-      await auth.fetchFriends();
-      console.log(auth.user);
-    };
-
-    getFriends();
-  }, []);
 
   useEffect(() => {
     const getUser = async () => {
       const response = await fetchUserProfile(userId);
-
       if (response.success) {
         setUser(response.data.user);
       } else {
@@ -46,7 +35,7 @@ const UserProfile = () => {
     };
 
     getUser();
-  }, [userId]);
+  }, [userId, navigate]);
 
   // A function to check whether user is a friend or not
   const checkIfUserIsAFriend = () => {
