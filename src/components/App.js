@@ -29,7 +29,6 @@ function App() {
             path="/"
             element={
               <PrivateRoute redirectTo="/register">
-                {JSON.stringify(auth.user)}
                 {auth.user ? <Home /> : null}
               </PrivateRoute>
             }
