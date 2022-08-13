@@ -25,11 +25,15 @@ function App() {
         <Navbar />
         <Routes>
           {/* here routes is same as switch of react router v5 */}
-          <Route path="/"  element={
+          <Route
+            path="/"
+            element={
               <PrivateRoute redirectTo="/register">
-                <Home />
+                {JSON.stringify(auth.user)}
+                {auth.user ? <Home /> : null}
               </PrivateRoute>
-            } />
+            }
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<SignUp />} />
           <Route

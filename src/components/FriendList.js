@@ -11,7 +11,8 @@ const FriendList = () => {
       await auth.fetchFriends();
     };
     getFriends();
-  }, [auth]);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className={styles.friendsList}>
